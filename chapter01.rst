@@ -132,12 +132,12 @@ an HTML template (``latest_books.html``)::
 
     # views.py (the business logic)
 
-    from django.shortcuts import render_to_response
+    from django.shortcuts import render
     from models import Book
 
     def latest_books(request):
         book_list = Book.objects.order_by('-pub_date')[:10]
-        return render_to_response('latest_books.html', {'book_list': book_list})
+        return render(request, 'latest_books.html', {'book_list': book_list})
 
 
     # urls.py (the URL configuration)
@@ -329,26 +329,19 @@ Python tutorial, it highlights Python features and functionality where
 appropriate, particularly when code doesn't immediately make sense. Still, we
 recommend you read the official Python tutorial, available online at
 http://docs.python.org/tut/. We also recommend Mark Pilgrim's free book
-*Dive Into Python*, available at http://www.diveintopython.org/ and published in
+*Dive Into Python*, available at http://www.diveintopython.net/ and published in
 print by Apress.
 
 Required Django Version
 -----------------------
 
-This book covers Django 1.1.
+This book covers Django 1.4.
 
-Django's developers maintain backwards compatibility within "major version"
-numbers. This commitment means that, if you write an application for Django
-1.1, it will still work for 1.2, 1.3, 1.9 and any other version number that
-starts with "1."
+Django's developers maintain backwards compatibility as much as possible, but
+occasionally introduce some backwards incompatible changes.  The changes in each
+release are always covered in the release notes, which you can find here:
+https://docs.djangoproject.com/en/dev/releases/1.X
 
-Once Django hits 2.0, though, your applications might need to be rewritten --
-but version 2.0 is a long way away. As a point of reference, it took more than
-three years to release version 1.0. (This is very similar to the compatibility
-policy taken by the Python language itself: code that was written for Python
-2.0 works on Python 2.6, but not necessarily with Python 3.0.)
-
-Given that this book covers 1.1, it should serve you well for some time.
 
 Getting Help
 ------------

@@ -327,7 +327,7 @@ that we want our ``Author`` model's ``email`` field to be optional -- that is,
 a blank string should be allowed. In the real world, you might not have an
 e-mail address on file for every author.
 
-To specify that the ``email`` field is optional, edit the ``Book`` model
+To specify that the ``email`` field is optional, edit the ``Author`` model
 (which, as you'll recall from Chapter 5, lives in ``mysite/books/models.py``).
 Simply add ``blank=True`` to the ``email`` field, like so:
 
@@ -984,7 +984,5 @@ What's Next?
 ============
 
 So far we've created a few models and configured a top-notch interface for
-editing data. In the `next chapter`_, we'll move on to the real "meat and potatoes"
+editing data. In the :doc:`next chapter <chapter07>`, we'll move on to the real "meat and potatoes"
 of Web development: form creation and processing.
-
-.. _next chapter: ../chapter07/
